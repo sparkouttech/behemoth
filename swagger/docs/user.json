@@ -1,0 +1,177 @@
+{
+    "docs" : {
+        "/v1/users": {
+            "post": {
+                "tags": ["UserManagement"],
+                "summary": "Add new user",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AddNewUser"
+                        }
+                    } 
+                ],
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "New user information stored successfully",
+                        "schema": {
+                            "$ref": "#/definitions/AddNewUser"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request "
+                    }
+                }
+            },
+            "get": {
+                "tags": ["UserManagement"],
+                "summary": "List all users",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "List of users retrieved successfully",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/AddNewUser"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/users/{id}": {
+            "get": {
+                "tags": ["UserManagement"],
+                "summary": "Get user",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true
+                    }
+                ],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "User details retrieved successfully",
+                        "schema": {
+                            "$ref": "#/definitions/AddNewUser"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["UserManagement"],
+                "summary": "Update user",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "$ref": "#/definitions/UpdateUserInput"
+                        }
+                    }
+                ],
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "User information updated successfully",
+                        "schema": {
+                            "$ref": "#/definitions/UpdateUserInput"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["UserManagement"],
+                "summary": "Delete user",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true
+                    }
+                ],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "User deleted successfully",
+                        "schema": {
+                            "$ref": "#/definitions/AddNewUser"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        }
+    },
+    "definition": {
+        "AddNewUser": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "siva"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "siva@sparkouttech.com"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "12345678"
+                },
+                "address": {
+                    "type": "string",
+                    "example": "24, ABC, XYZ"
+                },
+                "phone_number": {
+                    "type": "string",
+                    "example": "9852361470"
+                }
+            }
+        },
+        "UpdateUserInput": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "sivabharathy"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "siva@sparkouttech.com"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "12345678"
+                },
+                "address": {
+                    "type": "string",
+                    "example": "24, ABC, XYZ"
+                },
+                "phone_number": {
+                    "type": "string",
+                    "example": "9852361470"
+                }
+            }
+        }
+    }
+}

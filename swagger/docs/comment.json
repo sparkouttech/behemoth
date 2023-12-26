@@ -1,0 +1,177 @@
+{
+    "docs" : {
+        "/v1/comments": {
+            "post": {
+                "tags": ["CommentManagement"],
+                "summary": "Add new comment",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/AddNewcomment"
+                        }
+                    } 
+                ],
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "New comment information stored successfully",
+                        "schema": {
+                            "$ref": "#/definitions/AddNewcomment"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request "
+                    }
+                }
+            },
+            "get": {
+                "tags": ["CommentManagement"],
+                "summary": "List all comments",
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "List of comments retrieved successfully",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/AddNewcomment"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/comments/{id}": {
+            "get": {
+                "tags": ["CommentManagement"],
+                "summary": "Get comment",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true
+                    }
+                ],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "comment details retrieved successfully",
+                        "schema": {
+                            "$ref": "#/definitions/AddNewcomment"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            },
+            "patch": {
+                "tags": ["CommentManagement"],
+                "summary": "Update comment",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "$ref": "#/definitions/UpdatecommentInput"
+                        }
+                    }
+                ],
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "comment information updated successfully",
+                        "schema": {
+                            "$ref": "#/definitions/UpdatecommentInput"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["CommentManagement"],
+                "summary": "Delete comment",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true
+                    }
+                ],
+                "produces": ["application/json"],
+                "responses": {
+                    "200": {
+                        "description": "comment deleted successfully",
+                        "schema": {
+                            "$ref": "#/definitions/AddNewcomment"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    }
+                }
+            }
+        }
+    },
+    "definition": {
+        "AddNewcomment": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "siva"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "siva@sparkouttech.com"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "12345678"
+                },
+                "address": {
+                    "type": "string",
+                    "example": "24, ABC, XYZ"
+                },
+                "phone_number": {
+                    "type": "string",
+                    "example": "9852361470"
+                }
+            }
+        },
+        "UpdatecommentInput": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "example": "sivabharathy"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "siva@sparkouttech.com"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "12345678"
+                },
+                "address": {
+                    "type": "string",
+                    "example": "24, ABC, XYZ"
+                },
+                "phone_number": {
+                    "type": "string",
+                    "example": "9852361470"
+                }
+            }
+        }
+    }
+}
