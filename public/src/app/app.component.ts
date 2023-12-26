@@ -8,9 +8,10 @@ import { initFlowbite } from 'flowbite';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'web-app';
+  title = 'behamooth';
 
   ngOnInit(): void {
+    // initialise flowbite css 
     initFlowbite();
   }
 }
