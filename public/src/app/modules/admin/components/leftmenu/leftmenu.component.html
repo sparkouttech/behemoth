@@ -15,7 +15,7 @@
         <ul class="space-y-2">
 
             <li *ngFor="let menu of menus">
-                <a href="{{ menu.link }}" [class.active-menu]="activePathName == menu.link" class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="{{ menu.link }}" [class.active-menu]="activePathName == menu.link || activePathName.indexOf(menu.link) == 0" class="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <div [innerHTML]="menu.icon"></div>
                     <span class="ml-3">{{ menu.label }}</span>
                 </a>

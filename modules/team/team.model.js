@@ -6,19 +6,15 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.ObjectId;
 
 /**
- * Scope Schema
- * @created_at Tue Dec 26 2023 16:13:04 GMT+0530 (India Standard Time)
- * @description Scope model
+ * Team Schema
+ * @created_at Wed Dec 27 2023 16:52:06 GMT+0530 (India Standard Time)
+ * @description Team model
  */
 const schema = new Schema({
 
     name: {
         type: String,
         required: [true, 'name must not be empty'],
-    },
-    path: {
-        type: String,
-        required: [true, 'path must not be empty'],
     },
     status: {
         type: Number,
@@ -61,6 +57,10 @@ schema.post('remove', function(doc) {
     // console.log('%s has been removed', doc._id);
 });
 
+schema.pre('find', function (next) {
+    next();
+});
+
 schema.pre('findOneAndUpdate', function (next) {
     this.set({ updated_at: new Date() });
     next();
@@ -79,15 +79,15 @@ schema.pre('updateMany', function (next) {
 schema.methods._list = function(query = {}, ignoreColoumns = {}) {
     return new Promise(async (resolve, reject) => {
         try {
-            const scope = await Scope.find(query, ignoreColoumns);
-            resolve(scope);
+            const team = await Team.find(query, ignoreColoumns);
+            resolve(team);
         } catch (error) {
             reject(error)
         } 
     });
 }
 
-const Scope = mongoose.model('scopes', schema);
+const Team = mongoose.model('teams', schema);
 
-module.exports = Scope;
+module.exports = Team;
 

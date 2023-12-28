@@ -16,6 +16,16 @@ const schema = new Schema({
         type: String,
         required: [true, 'name must not be empty'],
     },
+    scopes: [{
+        scope: {
+            type: ObjectId,
+            ref: 'scopes'
+        },
+        create: { type: Boolean, default: false },
+        read: { type: Boolean, default: false },
+        update: { type: Boolean, default: false },
+        delete: { type: Boolean, default: false }
+    }],
     status: {
         type: Number,
         enum:[0, 1],

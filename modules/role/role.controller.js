@@ -56,8 +56,13 @@ const list = async (req, res) => {
         if (req.query.select) {
             req.query.select = req.query.select.replace(',', ' '); 
         }
-        const role = await Role.paginate({},req.query);
-        return sendSuccessResponse(res, { data: role, message: "Role list retrieved Successfully", statusCode: 200 });
+        if (req.query.all) {
+            const role = await Role.find({}).populate('scopes');
+            return sendSuccessResponse(res, { data: role, message: "Role list retrieved Successfully", statusCode: 200 });
+        } else {
+            const role = await Role.paginate({},req.query);
+            return sendSuccessResponse(res, { data: role, message: "Role list retrieved Successfully", statusCode: 200 });
+        }
     } catch (error) {
         console.log('Error:', error);
         sendErrorResponse(res, { error: error });

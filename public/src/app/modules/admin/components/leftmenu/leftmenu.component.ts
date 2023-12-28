@@ -21,14 +21,21 @@ export class LeftmenuComponent implements OnInit {
     {
       link: '/admin/dashboard',
       label: 'Dashboard',
-      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-secondary-500 transition duration-75 group-hover:text-secondary-900 dark:text-secondary-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14v4m-4 1h8M1 10h18M2 1h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Z" />
+    </svg>`)
+    },
+    {
+      link: '/admin/scope',
+      label: 'Scope management',
+      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-secondary-500 transition duration-75 group-hover:text-secondary-900 dark:text-secondary-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.75 4H19M7.75 4a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 4h2.25m13.5 6H19m-2.25 0a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 10h11.25m-4.5 6H19M7.75 16a2.25 2.25 0 0 1-4.5 0m4.5 0a2.25 2.25 0 0 0-4.5 0M1 16h2.25"/>
     </svg>`)
     },
     {
       link: '/admin/role',
       label: 'Role management',
-      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
+      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-secondary-500 transition duration-75 group-hover:text-secondary-900 dark:text-secondary-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.109 17H1v-2a4 4 0 0 1 4-4h.87M10 4.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm7.95 2.55a2 2 0 0 1 0 2.829l-6.364 6.364-3.536.707.707-3.536 6.364-6.364a2 2 0 0 1 2.829 0Z"
       />
     </svg>`)
@@ -36,28 +43,28 @@ export class LeftmenuComponent implements OnInit {
     {
       link: '/admin/user',
       label: 'User management',
-      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 18">
+      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-secondary-500 transition duration-75 group-hover:text-secondary-900 dark:text-secondary-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm-2 3h4a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z" />
   </svg>`)
     },
     {
       link: '/admin/team',
       label: 'Team management',
-      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
+      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-secondary-500 transition duration-75 group-hover:text-secondary-900 dark:text-secondary-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 3a3 3 0 1 1-1.614 5.53M15 12a4 4 0 0 1 4 4v1h-3.348M10 4.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0ZM5 11h3a4 4 0 0 1 4 4v2H1v-2a4 4 0 0 1 4-4Z" />
   </svg>`)
     },
     {
       link: '/admin/project',
       label: 'Project management',
-      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
+      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-secondary-500 transition duration-75 group-hover:text-secondary-900 dark:text-secondary-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 17V2a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12M5 15V1m8 18v-4" />
   </svg>`)
     },
     {
       link: '/admin/task',
       label: 'Task management',
-      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 20">
+      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-secondary-500 transition duration-75 group-hover:text-secondary-900 dark:text-secondary-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 3 6 2V1m5 2 1-1V1M9 7v11M9 7a5 5 0 0 1 5 5M9 7a5 5 0 0 0-5 5m5-5a4.959 4.959 0 0 1 2.973 1H12V6a3 3 0 0 0-6 0v2h.027A4.959 4.959 0 0 1 9 7Zm-5 5H1m3 0v2a5 5 0 0 0 10 0v-2m3 0h-3m-9.975 4H2a1 1 0 0 0-1 1v2m13-3h2.025a1 1 0 0 1 1 1v2M13 9h2.025a1 1 0 0 0 1-1V6m-11 3H3a1 1 0 0 1-1-1V6"
       />
   </svg>`)
@@ -65,7 +72,7 @@ export class LeftmenuComponent implements OnInit {
     {
       link: '/admin/settings',
       label: 'Settings',
-      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      icon: this.sanitizer.bypassSecurityTrustHtml(`<svg aria-hidden="true" class="flex-shrink-0 w-5 h-5 text-secondary-500 transition duration-75 group-hover:text-secondary-900 dark:text-secondary-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
       <path d="M6.5 8C5.80777 8 5.13108 7.79473 4.55551 7.41015C3.97993 7.02556 3.53133 6.47893 3.26642 5.83939C3.00152 5.19985 2.9322 4.49612 3.06725 3.81719C3.2023 3.13825 3.53564 2.51461 4.02513 2.02513C4.51461 1.53564 5.13825 1.2023 5.81719 1.06725C6.49612 0.932205 7.19985 1.00152 7.83939 1.26642C8.47893 1.53133 9.02556 1.97993 9.41015 2.55551C9.79473 3.13108 10 3.80777 10 4.5"
       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M6.5 17H1V15C1 13.9391 1.42143 12.9217 2.17157 12.1716C2.92172 11.4214 3.93913 11 5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

@@ -25,9 +25,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm.valueChanges.subscribe((val) => {
       this.isShowError = false;
-    });
-    console.log(this.storage.getItem('user'));
-    
+    });    
   }
 
   /**

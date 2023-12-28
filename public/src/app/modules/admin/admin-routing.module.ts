@@ -9,6 +9,8 @@ import { TeamComponent } from './pages/team/team.component';
 import { ProjectComponent } from './pages/project/project.component';
 import { TaskComponent } from './pages/task/task.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { ScopeComponent } from './pages/scope/scope.component';
+import { CreateUserComponent } from './pages/user/create-user/create-user.component';
 
 const routes: Routes = [
   { 
@@ -19,9 +21,11 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'role', component: RoleComponent },
       { path: 'user', component: UserComponent },
+      { path: 'user/create', component: CreateUserComponent },
       { path: 'team', component: TeamComponent },
       { path: 'project', component: ProjectComponent },
       { path: 'task', component: TaskComponent },
+      { path: 'scope', component: ScopeComponent },
       { path: 'settings', component: SettingsComponent },
     ]
   }

@@ -19,14 +19,23 @@ const schema = new Schema({
         type: String,
         required: [true, 'name must not be empty'],
     },
+    employee_id: {
+        type: String,
+        required: [true, 'employee id must not be empty'],
+    },
     role_id: {
         type: ObjectId, 
-        ref: 'users',
+        ref: 'roles',
         required: true,
     },
-    name: {
-        type: String,
+    team_id: {
+        type: ObjectId, 
+        ref: 'teams',
         required: true,
+    },
+    is_lead: {
+        type: Boolean,
+        default: false
     },
     email: {
         type: String,
@@ -42,6 +51,10 @@ const schema = new Schema({
         required: true,
         // You might want to add password hashing for security
     },
+    profile: [{
+        key: { type: String },
+        value: { type: String }
+    }],
     authentication_token: { 
         type: String, 
         unique: true 

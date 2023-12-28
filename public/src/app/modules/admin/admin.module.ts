@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
@@ -16,6 +16,10 @@ import { ProjectComponent } from './pages/project/project.component';
 import { TeamComponent } from './pages/team/team.component';
 import { TaskComponent } from './pages/task/task.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { ScopeComponent } from './pages/scope/scope.component';
+import { CreateScopeComponent } from './pages/scope/create-scope/create-scope.component';
+import { ViewRoleComponent } from './pages/role/components/view-role/view-role.component';
+import { CreateUserComponent } from './pages/user/create-user/create-user.component';
 
 
 @NgModule({
@@ -31,7 +35,11 @@ import { SettingsComponent } from './pages/settings/settings.component';
     ProjectComponent,
     TeamComponent,
     TaskComponent,
-    SettingsComponent
+    SettingsComponent,
+    ScopeComponent,
+    CreateScopeComponent,
+    ViewRoleComponent,
+    CreateUserComponent
   ],
   imports: [
     CommonModule,
@@ -40,6 +48,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
   ],
   providers: [
     StorageService
-  ]
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AdminModule { }

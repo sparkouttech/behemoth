@@ -53,11 +53,27 @@ const get = async (req, res) => {
  */
 const list = async (req, res) => {
     try {
+        const request = { ...req };
         if (req.query.select) {
             req.query.select = req.query.select.replace(',', ' '); 
         }
-        const scope = await Scope.paginate({},req.query);
-        return sendSuccessResponse(res, { data: scope, message: "Scope list retrieved Successfully", statusCode: 200 });
+        if (req.query.search) {
+            const regex = new RegExp(req.query.search, 'i');
+            req.query = {
+                $or: [
+                    { name: { $regex: regex } },
+                    { path: { $regex: regex } },
+                ]
+            }
+        }
+        if (request.query.all) {
+            delete req.query.all;
+            const scope = await Scope.find(req.query);
+            return sendSuccessResponse(res, { data: scope, message: "Scope list retrieved Successfully", statusCode: 200 });
+        } else {
+            const scope = await Scope.paginate({},req.query);
+            return sendSuccessResponse(res, { data: scope, message: "Scope list retrieved Successfully", statusCode: 200 });
+        }
     } catch (error) {
         console.log('Error:', error);
         sendErrorResponse(res, { error: error });

@@ -11,6 +11,7 @@ const User = require('./user.model');
  */
 const store = async (req, res) => {
     try {
+        req.body.is_lead = Boolean(req.body.is_lead);
         const user = await User.create(req.body)
         if (user) {
             return sendSuccessResponse(res, { data: user, message: "User created Successfully", statusCode: 200 });
@@ -56,8 +57,13 @@ const list = async (req, res) => {
         if (req.query.select) {
             req.query.select = req.query.select.replace(',', ' '); 
         }
-        const user = await User.paginate({},req.query);
-        return sendSuccessResponse(res, { data: user, message: "User list retrieved Successfully", statusCode: 200 });
+        if (req.query.all) {
+            const user = await User.find({}).populate('team_id').populate('role_id');
+            return sendSuccessResponse(res, { data: user, message: "User list retrieved Successfully", statusCode: 200 });
+        } else {
+            const user = await User.paginate({},req.query);
+            return sendSuccessResponse(res, { data: user, message: "User list retrieved Successfully", statusCode: 200 });
+        }
     } catch (error) {
         console.log('Error:', error);
         sendErrorResponse(res, { error: error });

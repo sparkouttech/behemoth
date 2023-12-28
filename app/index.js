@@ -46,12 +46,14 @@ seedAdminCredentials();
 // import module routes 
 
 app.use('/v1/admins', require('../modules/admin/admin.routes'));
+app.use('/v1/scopes', require('../modules/scope/scope.routes'));
 app.use('/v1/users', require('../modules/user/user.routes'));
 app.use('/v1/comments', require('../modules/comment/comment.routes'));
 app.use('/v1/notifications', require('../modules/notification/notification.routes'));
 app.use('/v1/projects', require('../modules/project/project.routes'));
 app.use('/v1/roles', require('../modules/role/role.routes'));
 app.use('/v1/tasks', require('../modules/task/task.routes'));
+app.use('/v1/teams', require('../modules/team/team.routes'));
 app.use('/v1/files', require('../modules/file/file.routes'));
 app.use('/v1/comments/files', require('../modules/comment/file/commentfile.routes'));
 
